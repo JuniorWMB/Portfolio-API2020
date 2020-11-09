@@ -18,8 +18,8 @@ const emailer = async (email, name, mobile) => {
     <p>Thank you.</p>`,
   };
   let toSend = await transporter.sendMail(mailOptions, function (error, info) {
-    console.log("error : " + JSON.stringify(error));
-    console.log("info : " + JSON.stringify(info));
+    // console.log("error : " + JSON.stringify(error));
+    // console.log("info : " + JSON.stringify(info));
   });
 };
 
