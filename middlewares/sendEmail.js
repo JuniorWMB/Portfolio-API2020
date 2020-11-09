@@ -10,14 +10,17 @@ const emailer = async (email, name, mobile) => {
   const mailOptions = {
     from: process.env.MY_MAIL,
     to: email,
-    bcc: "juniormbaya243@gmail.com",
+    // bcc: "juniormbaya243@gmail.com",
     subject: "back to back",
     html: `<h1> Hello ${name} </h1>
     <p>Thanks for your attention.</p>
     <p>Im contact you  in your mobile : ${mobile} soon,</p>
     <p>Thank you.</p>`,
   };
-  let toSend = await transporter.sendMail(mailOptions);
+  let toSend = await transporter.sendMail(mailOptions, function (error, info) {
+    console.log("error : " + JSON.stringify(error));
+    console.log("info : " + JSON.stringify(info));
+  });
 };
 
 module.exports = emailer;
