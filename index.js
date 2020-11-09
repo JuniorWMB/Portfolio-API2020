@@ -3,7 +3,7 @@ const app = express();
 require("dotenv").config();
 const cors = require("cors");
 app.use(cors());
-const port = process.env.PORT;
+// const port = process.env.PORT;
 
 const mongoose = require("mongoose");
 
@@ -26,6 +26,6 @@ app.all("*", (req, res) => {
   res.status(404).json({ message: "Page not found" });
 });
 
-app.listen(port, "0.0.0.0", () => {
+app.listen(process.env.PORT, "0.0.0.0", () => {
   console.log("Server started......");
 });
