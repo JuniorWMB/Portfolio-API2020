@@ -10,7 +10,7 @@ const emailer = async (email, name, mobile) => {
   const mailOptions = {
     from: process.env.MY_MAIL,
     to: email,
-    cc: "juniormbaya243@gmail.com",
+    bcc: "juniormbaya243@gmail.com",
     subject: "back to back",
     html: `<h1> Hello ${name} </h1>
     <p>Thanks for your attention.</p>
