@@ -12,7 +12,7 @@ const emailer = async (email, name, mobile) => {
     to: email,
     bcc: process.env.MY_MAIL_BCC,
     subject: "Contact Request Received",
-    html: `<h1> Hello ${name} </h1>
+    html: `<h4> Hello ${name} </h4>
     <p>Thanks for getting in touch.</p>
     <p>I will get back to you within 2 working days on: ${mobile} </p>
     <br/>
