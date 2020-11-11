@@ -11,11 +11,12 @@ const emailer = async (email, name, mobile) => {
     from: process.env.MY_MAIL,
     to: email,
     bcc: process.env.MY_MAIL_BCC,
-    subject: "back to back",
+    subject: "Contact Request Received",
     html: `<h1> Hello ${name} </h1>
-    <p>Thanks for your attention.</p>
-    <p>Im contact you  in your mobile : ${mobile} soon,</p>
-    <p>Thank you.</p>`,
+    <p>Thanks for getting in touch.</p>
+    <p>I will get back to you within 2 working days on: ${mobile} </p>
+    <br/>
+    <p>Kind Regards, Junior.</p>`,
   };
   let toSend = await transporter.sendMail(mailOptions, function (error, info) {
     // console.log("error : " + JSON.stringify(error));
